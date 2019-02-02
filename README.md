@@ -1,2 +1,2 @@
 # dockers
-Some useful docker containers and docker-compose config files
+Some useful docker containers and docker-compose config files.
