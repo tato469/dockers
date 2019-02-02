@@ -1,0 +1,40 @@
+# docker-compose.yml
+version: "3"
+services:    
+  api_express:
+    image: "node:10"
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=develpment
+    depends_on:
+      - postgis_gis
+    volumes:
+      - ./server:/home/node/app
+    ports:
+      - "3333:3333"
+    command: "npm run dev" #depends of the package.json in server/
+    expose:
+      - "3333"
+    networks:
+        - postgis-network
+
+  postgis_gis:
+    image: mdillon/postgis:10
+    restart: always
+    volumes:
+      - './persistence:/var/lib/postgresql/data' #Persistence of the data.
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      PGDATA: /var/lib/postgresql/data
+    networks:
+      - postgis-network
+    ports:
+      - '5432:5432'
+
+
+
+networks:
+  postgis-network:
+    driver: bridge

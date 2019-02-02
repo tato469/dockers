@@ -1,0 +1,26 @@
+{
+  "name": "gisp-api",
+  "version": "0.0.1",
+  "description": "API that connects to postgis data",
+  "main": "index.js",
+  "scripts": {
+    "dev": "yarn install && node index.js --watch ."
+  },
+  "author": "Fernando Valle",
+  "license": "GPL",
+  "dependencies": {
+    "express": "^4.16.4",
+    "knex": "^0.16.3",
+    "morgan": "^1.9.1",
+    "pg": "^7.7.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "yarn": "1.3.2"
+  }
+}
